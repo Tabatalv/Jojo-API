@@ -1,0 +1,14 @@
+
+body{
+  background-image: url("./Images/Jojo-wallpaper.jpg");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.character{
+  width: 20rem;
+  border: solid 2px rgb(254, 193, 193);
+  display: flex;
+}
+
