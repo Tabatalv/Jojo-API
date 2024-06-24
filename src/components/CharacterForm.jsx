@@ -17,6 +17,8 @@ useEffect(() =>{
   fetchData()
 }, []);
 
+    
+
     const [jojoName, setJojoName] = useState("");
     const [searchedCharacter, setSearchedCharacter] = useState(false)
     const handleSubmit = (e) => {
@@ -24,19 +26,22 @@ useEffect(() =>{
         console.log(searchedCharacter)
        
     }
-
+    const jojoCharsByName = characters.filter((jojo) =>
+          jojo.name.includes(jojoName)
+      );
+        console.log(jojoCharsByName)
     
   return (
     <>
     <form onSubmit={handleSubmit}>
-        <input onChange={(e) => setJojoName(e.target.value)} type="text" placeholder='Search for your favorite Jojo character!'value={jojoName} className='jojo-input' />
+        <input  onChange={(e) => setJojoName(e.target.value)} type="text" placeholder='Search for your favorite Jojo character!'value={jojoName} className='jojo-input' />
        <button onClick={ () =>  setSearchedCharacter(true)}><FaArrowRight/></button>
             
         
     </form>
     {
       loading ? <h1>Loading</h1> :
-      <CharacterList jojoCharacters={characters}/>
+      <CharacterList jojoCharacters={jojoCharsByName}/>
     }
     
     </>

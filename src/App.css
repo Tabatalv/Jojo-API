@@ -6,9 +6,15 @@ body{
   background-size: cover;
 }
 
-.character{
-  width: 20rem;
-  border: solid 2px rgb(254, 193, 193);
-  display: flex;
+#character{
+  background-color: rgb(97, 26, 163);
+  width: fit-content;
 }
 
+.jojo-input{
+  background-color: rgb(96, 16, 136);
+  padding: .5rem 1rem;
+}
+::placeholder{
+  color: rgb(71, 71, 206);
+}
